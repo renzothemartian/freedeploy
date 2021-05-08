@@ -8,7 +8,8 @@
             "install": [
                 "wget",
                 "apache2",
-                "python3"
+                "python3",
+                "smbfs"
             ]
         },
         "other_things_to_do": [
