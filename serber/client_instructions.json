@@ -3,6 +3,9 @@
         "version": 1,
         "date": "today is a day",
         "server_ip": "robotrenzo.com/fd/test/",
+        "ftp_drive_name": "drive name",
+        "ftp_drive_location": "drive location",
+        "ftp_user_name": "user name",
         "instructions": {
             "upgrade": "apt",
             "install": [
