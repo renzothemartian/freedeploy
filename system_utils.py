@@ -30,17 +30,16 @@ def get_python_version():
     return p_version
 
 
+# CHECK SYSTEM PLATFOMR
 def get_system_type():
     a = platform.system()
-    if a == ("Darwin"):
-        print(f"its a mac: {a}")
-    if a == ("Linux"):
-        print(f"its linux: {a}")
-    if a == ("Windows"):
-        print(f"its linux: {a}")
+    # if a == ("Darwin"):
+    #     print(f"its a mac: {a}")
+    # if a == ("Linux"):
+    #     print(f"its linux: {a}")
+    # if a == ("Windows"):
+    #     print(f"its linux: {a}")
     return a
-    # CHECK SYSTEM PLATFOMR
-    # IF LINUX PRINT ME SOME STUFF
 
 
 def get_mac_address():

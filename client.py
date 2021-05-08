@@ -62,17 +62,21 @@ def do_instructions(_inst):
     # for key, value in _inst['install'].items():
     #         print(f"key: {key} val: {value}")
 
-# this updates package repo
-    update = "sudo apt update"
-    system_utils.bash_command(update)
 
+    if system_utils.get_system_type() == ("Linux"):
+        print("linux")
+        # this updates package repo
+        # update = "sudo apt update"
+        # system_utils.bash_command(update)
+    else:
+        print("not linux")
 
 install_cmd_prefix = 'sudo apt install '
 def install_programs(_program):
     _cmd = install_cmd_prefix + _program
-    print(f'i: {_cmd}')
+    # print(f'i: {_cmd}')
     # system_utils.bash_command(my_cmd)
-
+ 
 
 
 # get_instructions(<YOUR URL HERE>)
