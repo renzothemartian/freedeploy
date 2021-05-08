@@ -3,17 +3,24 @@ import subprocess
 import uuid
 import platform
 
+# https://stackabuse.com/reading-and-writing-json-to-a-file-in-python/
+
+
+
+
 
 #  Execute bash command
 def bash_command(cmd):
     subprocess.Popen(['/bin/bash', '-c', cmd])
-
 
 def shell_task(_task):
     process = subprocess.Popen(_task, shell=True, text=True,stdout=subprocess.PIPE)
     process.wait()
     print(f'task return code: {process.returncode}')
     return process
+
+
+
 
 def get_python_version():
     # Python Version Check
