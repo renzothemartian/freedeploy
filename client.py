@@ -13,7 +13,6 @@ test_url = f"{url_prefix}raw.githubusercontent.com/renzothemartian/freedeploy/ma
 
 # this hits a URL and Saves the response
 def get_instructions(_url=None):
-    system_utils.get_mac_addy()
     # print(f"PYTHON: {system_utils.get_python_version()}")
     #  URL PARSING
     # Null check on _url param

@@ -8,6 +8,7 @@ import platform
 def bash_command(cmd):
     subprocess.Popen(['/bin/bash', '-c', cmd])
 
+
 def shell_task(_task):
     process = subprocess.Popen(_task, shell=True, stdout=subprocess.PIPE)
     process.wait()
@@ -21,6 +22,7 @@ def get_python_version():
     # if pythonVersion >= 3:
     #     print(f"Running Py3: {pythonVersion}")
     return p_version
+
 
 def get_system_type():
     a = platform.system()
@@ -37,11 +39,13 @@ def get_system_type():
 
 def get_mac_address():
     a = get_system_type()
+    _cmd = ''
     if a == ("Linux"):
             # print(f"mac: {a}")
-        # ip addr show | awk '/inet.*brd/{print $NF}'
+        _cmd = "ip addr show | awk '/inet.*brd/{print $NF}'"
     if a == ("Darwin"):
-        # ifconfig en1 | awk '/ether/{print $2}'
+        _cmd = "ifconfig en1 | awk '/ether/{print $2}'"
+        bash_command(_cmd)
     print(f"mac platform: {a}")
 
 
