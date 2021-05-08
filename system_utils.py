@@ -15,7 +15,6 @@ def shell_task(_task):
     print(f'task return code: {process.returncode}')
     return process
 
-
 def get_python_version():
     # Python Version Check
     p_version = sys.version_info[0]
