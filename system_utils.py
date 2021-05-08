@@ -22,7 +22,7 @@ def get_python_version():
     #     print(f"Running Py3: {pythonVersion}")
     return p_version
 
-def get_mac_addy():
+def get_system_type():
     a = platform.system()
     if a == ("Darwin"):
         print(f"its a mac: {a}")
@@ -30,10 +30,16 @@ def get_mac_addy():
         print(f"its linux: {a}")
     if a == ("Windows"):
         print(f"its linux: {a}")
+    return a
     # CHECK SYSTEM PLATFOMR
     # IF LINUX PRINT ME SOME STUFF
 
 
+def get_mac_address():
+    a = get_system_type()
+    if a == ("Linux"):
+            print(f"mac: {a}")
 
 
-get_mac_addy()
+
+get_mac_address()
