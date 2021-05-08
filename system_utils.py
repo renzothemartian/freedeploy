@@ -16,7 +16,7 @@ def bash_command(cmd):
 def shell_task(_task):
     process = subprocess.Popen(_task, shell=True, text=True,stdout=subprocess.PIPE)
     process.wait()
-    print(f'task return code: {process.returncode}')
+    # print(f'task return code: {proc.ess.returncode}')
     return process
 
 

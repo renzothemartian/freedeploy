@@ -51,14 +51,16 @@ def do_datas(_data):
 
 
 def do_instructions(_inst):
-    system_utils.shell_task('echo plz no')
-    # print(f'instructions: {_inst}')
 
+    # print(f'instructions: {_inst}')
     if system_utils.get_system_type() == ("Linux"):
-        print("linux")
-        # this updates package repo
-        # update = "sudo apt update"
-        # system_utils.bash_command(update)
+        a = system_utils.shell_task('sudo apt update && sudo apt upgrade')
+        if a.returncode == (0):
+            print ("it worked")
+        else:
+            print ("process failed")
+        print("it is linux")
+
     else:
         print("not linux")
 
