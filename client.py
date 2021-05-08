@@ -10,8 +10,8 @@ test_url = f"{url_prefix}raw.githubusercontent.com/renzothemartian/freedeploy/ma
 data = ""
 # Python Version Check
 pythonVersion = sys.version_info[0]
-if pythonVersion >= 3:
-    print(f"Running Py3: {pythonVersion}")
+# if pythonVersion >= 3:
+#     print(f"Running Py3: {pythonVersion}")
 
 # this hits a URL and Saves the response
 
@@ -34,7 +34,7 @@ def parse_instructions(_url=None):
     # save data as JSON variable
     data = json.loads(pw)
     # Write data to console
-    print(data["client_instructions"]["date"])
+    print(data["client_instructions"]["server_ip"])
     # this is going to do things
     do_datas(data)
     # print(pw)
@@ -43,7 +43,8 @@ def parse_instructions(_url=None):
 
 
 def do_datas(_data):
-    print(f"data: {_data}")
+    # print(f"data: {_data}")
+    print()
 
 
 # bashCommand = "cwm --rdf test.rdf --ntriples > test.nt"
