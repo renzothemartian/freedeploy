@@ -11,15 +11,10 @@ file_name = "client_instructions.json"
 test_url = f"{url_prefix}raw.githubusercontent.com/renzothemartian/freedeploy/main/serber/{file_name}"
 
 
-
-
-
-
-
 # this hits a URL and Saves the response
 def get_instructions(_url=None):
     system_utils.get_mac_addy()
-    print(f"PYTHON: {system_utils.get_python_version()}")
+    # print(f"PYTHON: {system_utils.get_python_version()}")
     #  URL PARSING
     # Null check on _url param
     if _url == "" or _url == None:
@@ -51,13 +46,14 @@ def do_datas(_data):
 
 
 def do_instructions(_inst):
+    print(f'instructions: {_inst}')
     # print(_inst['upgrade'])
     # b_cmd = 'sudo apt update'
 
     # # wait for it to finish
-    # for _val in _inst['install']:
-    #     print(f'value:{_val}')
-
+    for _val in _inst['install']:
+        # print(f'value:{_val}')
+        install_programs(_val)
     # for key, value in _inst['install'].items():
     #         print(f"key: {key} val: {value}")
 
@@ -68,13 +64,11 @@ def do_instructions(_inst):
 
 
 
-
-
-
-
-
-
-
+install_cmd_prefix = 'sudo apt install '
+def install_programs(_program):
+    _cmd = install_cmd_prefix + _program
+    print(f'i: {_cmd}')
+    # system_utils.bash_command(my_cmd)
 
 
 
