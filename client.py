@@ -65,8 +65,8 @@ def do_instructions(_inst):
     # for key, value in _inst['install'].items():
     #         print(f"key: {key} val: {value}")
 
-    bashCommand = "echo hello there friendo"
-    bash_command(bashCommand)
+    my_cmd = "echo hello there friendo"
+    bash_command(my_cmd)
     # process = subprocess.run(bashCommand.split(), stdout=subprocess.PIPE)
     # output, error = process.communicate()
 
