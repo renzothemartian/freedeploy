@@ -9,7 +9,7 @@ def bash_command(cmd):
 def shell_task(_task):
     process = subprocess.Popen(_task, shell=True, stdout=subprocess.PIPE)
     process.wait()
-    print(process.returncode)
+    print(f'task return code: {process.returncode}')
     return process
 
 

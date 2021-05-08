@@ -46,11 +46,11 @@ def do_datas(_data):
 
 
 def do_instructions(_inst):
+    system_utils.shell_task('echo plz no')
     print(f'instructions: {_inst}')
     # print(_inst['upgrade'])
-    # b_cmd = 'sudo apt update'
 
-    # # wait for it to finish
+    #  wait for it to finish
     for _val in _inst['install']:
         # print(f'value:{_val}')
         install_programs(_val)
