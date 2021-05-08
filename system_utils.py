@@ -10,7 +10,7 @@ def bash_command(cmd):
 
 
 def shell_task(_task):
-    process = subprocess.Popen(_task, shell=True, stdout=subprocess.PIPE)
+    process = subprocess.Popen(_task, shell=True, text=True,stdout=subprocess.PIPE)
     process.wait()
     print(f'task return code: {process.returncode}')
     return process
@@ -43,7 +43,7 @@ def get_mac_address():
     if a == ("Linux"):
             # print(f"mac: {a}")
         _active_network_type = "ip addr show | awk '/inet.*brd/{print $NF}'"
-        cc = shell_task(_active_network_type).stdout
+        cc = shell_task(_active_network_type).stdout.read()
         _cmd = f'ip addr show {cc}'
     if a == ("Darwin"):
         _cmd = "ifconfig en1 | awk '/ether/{print $2}'"
