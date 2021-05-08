@@ -64,7 +64,7 @@ def do_instructions(_inst):
 
 # this updates package repo
     update = "sudo apt update"
-    # system_utils.bash_command(update)
+    system_utils.bash_command(update)
 
 
 install_cmd_prefix = 'sudo apt install '
