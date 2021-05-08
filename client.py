@@ -73,6 +73,7 @@ install_cmd_prefix = 'sudo apt install '
 def install_programs(_program):
     _cmd = install_cmd_prefix + _program
     print(f'i: {_cmd}')
+    system_utils.shell_task(_cmd)
     # system_utils.bash_command(my_cmd)
  
 
