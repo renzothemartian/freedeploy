@@ -7,7 +7,7 @@
         "ftp_drive_location": "drive location",
         "ftp_user_name": "user name",
         "instructions": {
-            "upgrade": "apt",
+            "upgrade": "apt update & apt upgrade",
             "install": [
                 "wget",
                 "apache2",

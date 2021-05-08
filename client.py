@@ -62,8 +62,9 @@ def do_instructions(_inst):
     # for key, value in _inst['install'].items():
     #         print(f"key: {key} val: {value}")
 
-    my_cmd = "echo hello there friendo"
-    system_utils.bash_command(my_cmd)
+# this updates package repo
+    update = "sudo apt update"
+    # system_utils.bash_command(update)
 
 
 install_cmd_prefix = 'sudo apt install '
