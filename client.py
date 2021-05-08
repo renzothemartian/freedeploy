@@ -37,12 +37,14 @@ def get_instructions(_url=None):
     do_datas(data)
 
     # print(response)
-    with open('client_instructions.json', 'w') as outfile:
+    with open('instructions.json', 'w') as outfile:
         json.dump(data, outfile)
+
+
 
 # doing things
 def do_datas(_data):
-    for key, value in _data['instructions'].items():
+    for key, value in _data['client_instructions'].items():
         if key == 'instructions':
             # print(f"key: {key} val: {value}")
             do_instructions(value)
@@ -64,9 +66,6 @@ def do_instructions(_inst):
     system_utils.bash_command(my_cmd)
 
 
-
-
-
 install_cmd_prefix = 'sudo apt install '
 def install_programs(_program):
     _cmd = install_cmd_prefix + _program
@@ -75,9 +74,5 @@ def install_programs(_program):
 
 
 
-
-
-
 # get_instructions(<YOUR URL HERE>)
 get_instructions()
-# do_datas()
