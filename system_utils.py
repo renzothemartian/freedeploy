@@ -38,8 +38,11 @@ def get_system_type():
 def get_mac_address():
     a = get_system_type()
     if a == ("Linux"):
-            print(f"mac: {a}")
-
+            # print(f"mac: {a}")
+        # ip addr show | awk '/inet.*brd/{print $NF}'
+    if a == ("Darwin"):
+        # ifconfig en1 | awk '/ether/{print $2}'
+    print(f"mac platform: {a}")
 
 
 get_mac_address()
