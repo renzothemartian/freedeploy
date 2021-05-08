@@ -45,7 +45,8 @@ def get_mac_address():
         _cmd = "ip addr show | awk '/inet.*brd/{print $NF}'"
     if a == ("Darwin"):
         _cmd = "ifconfig en1 | awk '/ether/{print $2}'"
-        bash_command(_cmd)
+    
+    bash_command(_cmd)
     print(f"mac platform: {a}")
 
 
