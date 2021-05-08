@@ -1,10 +1,9 @@
 {
     "client_instructions": {
         "version": 1,
-        "name": "John Doe",
+        "date": "today is a day",
         "server_ip": "robotrenzo.com/fd/test/",
         "instructions": {
-            "update": "apt",
             "upgrade": "apt",
             "install": [
                 "wget",
