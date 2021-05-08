@@ -42,10 +42,12 @@ def get_mac_address():
     _cmd = ''
     if a == ("Linux"):
             # print(f"mac: {a}")
-        _cmd = "ip addr show | awk '/inet.*brd/{print $NF}'"
+        _active_network_type = "ip addr show | awk '/inet.*brd/{print $NF}'"
+        cc = shell_task(_active_network_type).stdout.read()
+        _cmd = f'ipaddr show {cc}'
     if a == ("Darwin"):
         _cmd = "ifconfig en1 | awk '/ether/{print $2}'"
-    
+
     # bash_command(_cmd)
     bb = shell_task(_cmd).stdout.read()
     print(f"uwu: {bb}")
