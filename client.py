@@ -16,9 +16,7 @@ pythonVersion = sys.version_info[0]
 #     print(f"Running Py3: {pythonVersion}")
 
 
-#  Execute bash command
-def bash_command(cmd):
-    subprocess.Popen(['/bin/bash', '-c', cmd])
+
 
 
 # this hits a URL and Saves the response
@@ -65,7 +63,7 @@ def do_instructions(_inst):
     #         print(f"key: {key} val: {value}")
 
     my_cmd = "echo hello there friendo"
-    bash_command(my_cmd)
+    system_utils.bash_command(my_cmd)
 
 
 
