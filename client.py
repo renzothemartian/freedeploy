@@ -4,11 +4,11 @@ import urllib
 import urllib.request as req
 import json
 
+import system_utils
+
 url_prefix = "https://"
 file_name = "client_instructions.json"
 test_url = f"{url_prefix}raw.githubusercontent.com/renzothemartian/freedeploy/main/serber/{file_name}"
-
-data = ""
 
 # Python Version Check
 pythonVersion = sys.version_info[0]
@@ -66,8 +66,6 @@ def do_instructions(_inst):
 
     my_cmd = "echo hello there friendo"
     bash_command(my_cmd)
-    # process = subprocess.run(bashCommand.split(), stdout=subprocess.PIPE)
-    # output, error = process.communicate()
 
 
 
