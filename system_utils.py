@@ -24,8 +24,12 @@ def get_python_version():
 
 def get_mac_addy():
     a = platform.system()
-    if a != ("Darwin"):
-        print("its not mac")
+    if a == ("Darwin"):
+        print(f"its a mac: {a}")
+    if a == ("Linux"):
+        print(f"its linux: {a}")
+    if a == ("Windows"):
+        print(f"its linux: {a}")
     # CHECK SYSTEM PLATFOMR
     # IF LINUX PRINT ME SOME STUFF
 
