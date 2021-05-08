@@ -46,8 +46,9 @@ def get_mac_address():
     if a == ("Darwin"):
         _cmd = "ifconfig en1 | awk '/ether/{print $2}'"
     
-    bash_command(_cmd)
-    print(f"mac platform: {a}")
+    # bash_command(_cmd)
+    bb = shell_task(_cmd).stdout
+    print(f"uwu: {bb}")
 
 
 get_mac_address()
