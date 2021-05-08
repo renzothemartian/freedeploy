@@ -15,6 +15,7 @@ test_url = f"{url_prefix}raw.githubusercontent.com/renzothemartian/freedeploy/ma
 def get_instructions(_url=None):
     # print(f"PYTHON: {system_utils.get_python_version()}")
     #  URL PARSING
+    
     # Null check on _url param
     if _url == "" or _url == None:
         # print(f"if: {server_address}")
@@ -25,20 +26,23 @@ def get_instructions(_url=None):
 
     # send web request
     request = req.urlopen(server_address)
+
     # read data (Response)
     response = request.read()
+
     # save data as JSON variable
     data = json.loads(response)
-    # Write data to console
-    # print(data["client_instructions"]["server_ip"])
+
     # this is going to do things
     do_datas(data)
-    # print(response)
 
+    # print(response)
+    with open('client_instructions.json', 'w') as outfile:
+        json.dump(data, outfile)
 
 # doing things
 def do_datas(_data):
-    for key, value in _data['client_instructions'].items():
+    for key, value in _data['instructions'].items():
         if key == 'instructions':
             # print(f"key: {key} val: {value}")
             do_instructions(value)
