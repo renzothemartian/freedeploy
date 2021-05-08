@@ -54,7 +54,7 @@ def do_instructions(_inst):
 
     # print(f'instructions: {_inst}')
     if system_utils.get_system_type() == ("Linux"):
-        a = system_utils.shell_task('sudo apt update && sudo apt upgrade')
+        a = system_utils.shell_task('sudo apt update')
         if a.returncode == (0):
             print ("it worked")
         else:
