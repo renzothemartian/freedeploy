@@ -57,23 +57,22 @@ def do_instructions(_inst):
         a = system_utils.shell_task('sudo apt update')
         if a.returncode == (0):
             print ("update/upgrade succesful using apt")
+            #  wait for it to finish
+            for _val in _inst['install']:
+                # print(f'value:{_val}')
+                install_programs(_val)
         else:
             print ("process failed")
         print("it is linux")
-
     else:
         print("not linux")
 
-    #  wait for it to finish
-    for _val in _inst['install']:
-        # print(f'value:{_val}')
-        install_programs(_val)
 
 
 install_cmd_prefix = 'sudo apt install '
 def install_programs(_program):
     _cmd = install_cmd_prefix + _program
-    # print(f'i: {_cmd}')
+    print(f'i: {_cmd}')
     # system_utils.bash_command(my_cmd)
  
 
