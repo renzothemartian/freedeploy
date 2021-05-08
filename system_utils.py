@@ -1,6 +1,8 @@
 import sys
 import subprocess
 import uuid
+import platform
+
 
 #  Execute bash command
 def bash_command(cmd):
@@ -21,7 +23,11 @@ def get_python_version():
     return p_version
 
 def get_mac_addy():
-    print('oo')
+    print(platform.system())
+    # CHECK SYSTEM PLATFOMR
+    # IF LINUX PRINT ME SOME STUFF
+
+
 
 
 get_mac_addy()
