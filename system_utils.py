@@ -47,7 +47,7 @@ def get_mac_address():
         _cmd = "ifconfig en1 | awk '/ether/{print $2}'"
     
     # bash_command(_cmd)
-    bb = shell_task(_cmd).stdout
+    bb = shell_task(_cmd).stdout.read()
     print(f"uwu: {bb}")
 
 
