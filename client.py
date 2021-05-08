@@ -11,6 +11,9 @@ if pythonVersion >= 3:
     print(f"Running Py3: {pythonVersion}")
 
 data = ""
+# this hits a URL and Saves the response
+
+
 def parse_instructions():
     #  URL PARSING
     # LINK: https://stackoverflow.com/questions/6594620/python-3-2-unable-to-import-urllib2-importerror-no-module-named-urllib2
@@ -21,7 +24,20 @@ def parse_instructions():
     data = json.loads(pw)
 
     print(data["client_instructions"]["date"])
+    do_datas(data)
     # print(pw)
+
+# doing things
+def do_datas(_data):
+    print(f"data: {_data}")
+
+
+# bashCommand = "cwm --rdf test.rdf --ntriples > test.nt"
+# import subprocess
+# process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+# output, error = process.communicate()
+
 
 
 parse_instructions()
+# do_datas()
