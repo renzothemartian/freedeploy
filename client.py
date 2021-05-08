@@ -52,16 +52,7 @@ def do_datas(_data):
 
 def do_instructions(_inst):
     system_utils.shell_task('echo plz no')
-    print(f'instructions: {_inst}')
-    # print(_inst['upgrade'])
-
-    #  wait for it to finish
-    for _val in _inst['install']:
-        # print(f'value:{_val}')
-        install_programs(_val)
-    # for key, value in _inst['install'].items():
-    #         print(f"key: {key} val: {value}")
-
+    # print(f'instructions: {_inst}')
 
     if system_utils.get_system_type() == ("Linux"):
         print("linux")
@@ -70,6 +61,12 @@ def do_instructions(_inst):
         # system_utils.bash_command(update)
     else:
         print("not linux")
+
+    #  wait for it to finish
+    for _val in _inst['install']:
+        # print(f'value:{_val}')
+        install_programs(_val)
+
 
 install_cmd_prefix = 'sudo apt install '
 def install_programs(_program):

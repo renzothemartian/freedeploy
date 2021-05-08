@@ -46,7 +46,6 @@ def get_mac_address():
     a = get_system_type()
     _cmd = ''
     if a == ("Linux"):
-            # print(f"mac: {a}")
         _active_network_type = "ip addr show | awk '/inet.*brd/{print $NF}'"
         cc = shell_task(_active_network_type).stdout.read()
         _cmd = f'ip addr show {cc}'
@@ -55,7 +54,7 @@ def get_mac_address():
 
     # bash_command(_cmd)
     bb = shell_task(_cmd).stdout.read()
-    print(f"uwu: {bb}")
+    print(f"MAC Address: {bb}")
 
 
 get_mac_address()
