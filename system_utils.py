@@ -43,7 +43,7 @@ def get_mac_address():
     if a == ("Linux"):
             # print(f"mac: {a}")
         _active_network_type = "ip addr show | awk '/inet.*brd/{print $NF}'"
-        cc = shell_task(_active_network_type).stdout.read()
+        cc = shell_task(_active_network_type).stdout
         _cmd = f'ip addr show {cc}'
     if a == ("Darwin"):
         _cmd = "ifconfig en1 | awk '/ether/{print $2}'"
