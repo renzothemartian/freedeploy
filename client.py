@@ -21,6 +21,8 @@ pythonVersion = sys.version_info[0]
 
 # this hits a URL and Saves the response
 def get_instructions(_url=None):
+    system_utils.get_mac_addy()
+
     #  URL PARSING
     # Null check on _url param
     if _url == "" or _url == None:
